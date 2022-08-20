@@ -1,0 +1,23 @@
+{
+  "name": "hackathon-2022",
+  "version": "1.0.0",
+  "description": "Groovr is a music based dating app that matches users based on their preferred genres.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mshunjan/Hackathon-2022.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mshunjan/Hackathon-2022/issues"
+  },
+  "homepage": "https://github.com/mshunjan/Hackathon-2022#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
