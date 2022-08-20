@@ -19,7 +19,7 @@ const theme = createTheme({
   },
 });
 
-callBackendAPI = async () => {
+const callBackendAPI = async () => {
   const response = await fetch('/express_backend');
   const body = await response.json();
 
