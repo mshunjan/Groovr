@@ -1,18 +1,13 @@
-import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import { Stack } from '@mui/system';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Divider from '@mui/material/Divider';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
-
-const theme = createTheme();
 
 export default function SignIn() {
     const handleSubmit = (event) => {
@@ -25,9 +20,7 @@ export default function SignIn() {
     };
 
     return (
-        <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
-                <CssBaseline />
                 <Box
                     sx={{
                         marginTop: 20,
@@ -88,6 +81,5 @@ export default function SignIn() {
                     </Stack>
                 </Box>
             </Container>
-        </ThemeProvider>
     );
 }

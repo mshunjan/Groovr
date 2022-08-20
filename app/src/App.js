@@ -3,20 +3,34 @@ import './App.css';
 import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: purple[500],
+    },
+  },
+});
+
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />}/> 
-        <Route path="/signup" element={<SignUp />}/> 
-      </Routes>
-    </Router>
+    <>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<SignUp />} />
+            <Route path="/Home" element={<Home />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </>
   );
 }
 
