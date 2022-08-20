@@ -1,7 +1,5 @@
 
-# Project Title
-
-A brief description of what this project does and who it's for
+# Groovr 
 
 Groovr is a music based dating app that matches users based on their preferred genres.
 
