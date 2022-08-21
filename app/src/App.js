@@ -17,7 +17,7 @@ const theme = createTheme({
     primary: {
       main: purple[500],
     },
-  },
+  }
 });
 
 const callBackendAPI = async () => {
