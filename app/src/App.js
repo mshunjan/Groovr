@@ -20,7 +20,6 @@ const theme = createTheme({
     },
     background: {
       paper: purple[50],
-      default: purple[100]
     }
   }
 });

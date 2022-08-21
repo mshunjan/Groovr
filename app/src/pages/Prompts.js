@@ -204,7 +204,6 @@ export default function Prompts() {
                     </Stack>
                 </StyledBox>
             </SwipeableDrawer>
-            <SimpleBottomNavigation />
         </>
     );
 }
