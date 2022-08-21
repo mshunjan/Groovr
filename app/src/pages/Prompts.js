@@ -47,11 +47,17 @@ const Puller = styled(Box)(({ theme }) => ({
 export default function Prompts() {
 
     const [open, setOpen] = React.useState(false);
+    const [albumShow, setAlbumshow] = React.useState(false);
 
     const toggleDrawer = (e) => {
         if (e.key === 'Enter') {
             setOpen(true);
         }
+    };
+
+    const albumToggle = () => {
+        setAlbumshow(true);
+        setOpen(false);
     };
 
 
@@ -91,6 +97,20 @@ export default function Prompts() {
                             <Card style={cardStyle} sx={{
                                 backgroundImage: `linear-gradient(to bottom right, rgb(${(20 * id) + 107},27,${(20 * id) + 154}), rgb(${(20 * id) + 150},100,${(20 * id) + 1805}))`,
                             }}>
+
+                                {albumShow && id == 0 ?
+                                    <Stack direction="row" sx={{ mt: 2 }}>
+                                        <img src={album1} height='80px' width='80px' />
+                                        <Stack direction="column">
+                                            <Typography variant="h8" sx={{ fontWeight: 'bold', ml: 2, color: 'white', mr: 2}} component="div">
+                                                Some Girls Are Bigger Than Others
+                                            </Typography>
+                                            <Typography variant="h8" sx={{ color: '#EEEEEE', ml: 2 }}>
+                                                The Smiths
+                                            </Typography>
+                                        </Stack>
+                                    </Stack> : <></>}
+
                                 <ClearIcon sx={{ position: 'absolute', top: '0.3em', right: '0.3em', pointer: 'cursor' }} />
                                 <Stack direction="row" >
                                     <CardContent sx={{ mt: 2, mr: 1 }}>
@@ -138,7 +158,7 @@ export default function Prompts() {
                     <Typography sx={{ p: 2, color: 'text.secondary' }}>5 results</Typography>
                     <Stack direction="column" spacing={1}>
 
-                        <Card style={albumCardStyle}>
+                        <Card style={albumCardStyle} onClick={() => { albumToggle() }} sx={{ cursor: 'pointer' }}>
                             <CardContent sx={{ mt: 2, mr: 1 }}>
 
                                 <Stack direction="row" >
@@ -155,12 +175,12 @@ export default function Prompts() {
                                             The Smiths
                                         </Typography>
                                     </Stack>
-                                    <PlayArrowIcon color="primary" sx={{fontSize: '35px', bottom: '0px', right: '10px'}}/>
+                                    <PlayArrowIcon color="primary" sx={{ fontSize: '35px' }} />
                                 </Stack>
                             </CardContent>
                         </Card>
 
-                        <Card style={albumCardStyle}>
+                        <Card style={albumCardStyle} sx={{ cursor: 'pointer' }}>
                             <CardContent sx={{ mt: 2, mr: 1 }}>
 
                                 <Stack direction="row" >
@@ -177,7 +197,7 @@ export default function Prompts() {
                                             The Smiths
                                         </Typography>
                                     </Stack>
-                                    <PlayArrowIcon color="primary" sx={{fontSize: '35px', bottom: '0px', right: '10px'}}/>
+                                    <PlayArrowIcon color="primary" sx={{ fontSize: '35px', pl: 10 }} />
                                 </Stack>
                             </CardContent>
                         </Card>
