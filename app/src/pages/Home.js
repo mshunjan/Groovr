@@ -10,7 +10,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Home = () => {
     const [click, setClick] = useState({
-        explore: false,
+        explore: true,
         messages: false,
         profile: false
     })

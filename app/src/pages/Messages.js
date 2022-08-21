@@ -1,5 +1,6 @@
-import { Typography, Box, Card, Stack, CardMedia, CardActionArea, CardContent } from '@mui/material';
+import { Typography, Box, Card, Stack, CardActionArea, Avatar } from '@mui/material';
 import Container from '@mui/material/Container';
+import profile1 from '../images/profile1.jpg';
 
 const Messages = () => {
     const cardStyle = {
@@ -9,10 +10,10 @@ const Messages = () => {
     };
 
     const data = [{
-        // image: 'test',
-        message: "I've been listening to grunge recently!"
+        image: profile1,
+        message: "I've been listening to grunge ..."
     }]
-    
+
     return (
         <Container component="main" maxWidth="xs">
             <Typography variant={'h6'} pt={5} pb={3}>
@@ -22,17 +23,11 @@ const Messages = () => {
                 {data.map(point =>
                     <CardActionArea>
                         <Card style={cardStyle}>
-                            <Stack direction="row" >
-                                <CardMedia
-                                    component="img"
-                                    sx={{ width: 151 }}
-                                    image={point.image}
-                                />
-                                <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography >
-                                        {point.message}
-                                    </Typography>
-                                </CardContent>
+                            <Stack direction="row" spacing={2} justifyContent={"center"} alignItems={'center'}>
+                                <Avatar src={point.image}/>
+                                <Typography >
+                                    {point.message}
+                                </Typography>
                             </Stack>
                         </Card>
 
