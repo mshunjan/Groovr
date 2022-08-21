@@ -16,7 +16,9 @@ const NavigationComponent = ({ navs }) => {
         }}
       >
         {navs.map(nav => 
-          <BottomNavigationAction label={nav.label} icon={nav.icon} onClick={nav.onclick} />
+          <BottomNavigationAction label={nav.label} icon={nav.icon} onClick={
+            () => {nav.onclick(nav.label.toLowerCase())}
+          } />
       )}
       </BottomNavigation>
     </Box>
