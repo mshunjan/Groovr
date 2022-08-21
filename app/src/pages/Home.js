@@ -14,9 +14,9 @@ import { Avatar } from "@mui/material";
 
 const Home = () => {
     const [click, setClick] = useState({
-        explore: true,
+        explore: false,
         messages: false,
-        profile: false
+        profile: true
     })
 
     const handleClick = (obj) => {
