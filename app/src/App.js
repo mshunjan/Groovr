@@ -2,7 +2,7 @@ import './App.css';
 
 import Home from './pages/Home';
 import SignUp from './pages/SignUp';
-import Explore from './pages/Explore';
+import Prompts from './pages/Prompts';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
@@ -25,7 +25,7 @@ const callBackendAPI = async () => {
   const body = await response.json();
 
   if (response.status !== 200) {
-    throw Error(body.message) 
+    throw Error(body.message)
   }
   return body;
 };
@@ -38,7 +38,7 @@ function App() {
           <Routes>
             <Route path="/" element={<SignUp />} />
             <Route path="/Home" element={<Home />} />
-            <Route path="/Explore" element={<Explore />} />
+            <Route path="/Prompts" element={<Prompts />} />
           </Routes>
         </Router>
       </ThemeProvider>
