@@ -3,7 +3,7 @@ import { Container } from "@mui/system";
 import NavigationComponent from "../components/NavigationComponent";
 
 import Messages from "./Messages";
-
+import Explore from "./Explore";
 import ExploreIcon from '@mui/icons-material/Explore';
 import ForumIcon from '@mui/icons-material/Forum';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -46,10 +46,10 @@ const Home = () => {
     return (
         <>
             <Container>
-                {/* {click.explore ?
+                {click.explore ?
                     <Explore />
                     :
-                    null} */}
+                    null}
                 {click.messages ?
                     <Messages />
                     :

@@ -121,7 +121,7 @@ export default function Explore() {
                 </Container >
             </Slide>
 
-            <SimpleBottomNavigation />
+            {/* <SimpleBottomNavigation /> */}
         </>
     );
 }

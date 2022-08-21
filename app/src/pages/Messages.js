@@ -9,9 +9,10 @@ const Messages = () => {
     };
 
     const data = [{
-        image: 'test',
+        // image: 'test',
         message: "I've been listening to grunge recently!"
     }]
+    
     return (
         <Container component="main" maxWidth="xs">
             <Typography variant={'h6'} pt={5} pb={3}>
