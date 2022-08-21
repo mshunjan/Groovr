@@ -8,8 +8,10 @@ import Divider from '@mui/material/Divider';
 import GoogleIcon from '@mui/icons-material/Google';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import AppleIcon from '@mui/icons-material/Apple';
+import { useNavigate } from 'react-router-dom';
+import masterprofile from '../images/masterprofile.jpg';
 
-export default function SignIn() {
+export default function SignUp() {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -18,6 +20,11 @@ export default function SignIn() {
             password: data.get('password'),
         });
     };
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate('/profile')
+    }
 
     return (
             <Container component="main" maxWidth="xs">
@@ -29,10 +36,10 @@ export default function SignIn() {
                         alignItems: 'center',
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main', marginBottom: 5 }}>
+                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main', marginBottom: 2, height:100, width:100}} src={masterprofile}> 
                     </Avatar>
                     <Typography component="h1" variant="h6">
-                        Sign Up to Continue
+                        Log In to Continue
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }} m={3}>
                         <Button
@@ -40,8 +47,9 @@ export default function SignIn() {
                             fullWidth
                             variant="contained"
                             sx={{ mt: 3, mb: 1 }}
+                            onClick={handleClick}
                         >
-                            Continue with email
+                            Continue as Mary
                         </Button>
                         <Button
                             type="submit"
