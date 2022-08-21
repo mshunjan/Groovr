@@ -4,6 +4,8 @@ import NavigationComponent from "../components/NavigationComponent";
 
 import Messages from "./Messages";
 import Explore from "./Explore";
+import Profile from "./Profile";
+
 import ExploreIcon from '@mui/icons-material/Explore';
 import ForumIcon from '@mui/icons-material/Forum';
 // import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -56,10 +58,10 @@ const Home = () => {
                     <Messages />
                     :
                     null}
-                {/* {click.profile ?
+                {click.profile ?
                     <Profile />
                     :
-                    null} */}
+                    null}
                 <NavigationComponent navs={navs} />
             </Container>
         </>
