@@ -1,9 +1,10 @@
-import { Typography, Box, Card, Stack, CardActionArea, Avatar, Fade } from '@mui/material';
+import { Typography, Box, Card, Stack, CardActionArea, Avatar, Fade, Button } from '@mui/material';
 import Container from '@mui/material/Container';
 
 import masterprofile from '../images/masterprofile.jpg';
 
 import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const cardStyle = {
@@ -14,6 +15,7 @@ const Profile = () => {
 
     const [checked, setChecked] = useState(false);
     const containerRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setChecked(true);
@@ -36,40 +38,20 @@ const Profile = () => {
                             alignItems: 'center',
                         }}>
                         <Typography variant='h5' pb={3}>
-                            Mariah
+                            Mary
                         </Typography>
                         <Avatar src={masterprofile} sx={{ width: 200, height: 200, }} />
                     </Box>
                     <Stack direction="column" spacing={2.5} pt={5}>
-                        <CardActionArea>
-                            <Card style={cardStyle}>
-                                <Stack direction="row" spacing={2} justifyContent={"center"} alignItems={'center'}>
-                                    <Typography >
-                                        Edit Profile
-                                    </Typography>
-                                </Stack>
-                            </Card>
-                        </CardActionArea>
-
-                        <CardActionArea>
-                            <Card style={cardStyle}>
-                                <Stack direction="row" spacing={2} justifyContent={"center"} alignItems={'center'}>
-                                    <Typography >
-                                        Preferences
-                                    </Typography>
-                                </Stack>
-                            </Card>
-                        </CardActionArea>
-
-                        <CardActionArea>
-                            <Card style={cardStyle}>
-                                <Stack direction="row" spacing={2} justifyContent={"center"} alignItems={'center'}>
-                                    <Typography >
-                                        Settings
-                                    </Typography>
-                                </Stack>
-                            </Card>
-                        </CardActionArea>
+                        <Button variant='outlined'onClick={() => (navigate('/edit'))}>
+                            Edit Profile
+                        </Button>
+                        <Button variant='outlined'>
+                            Preferences
+                        </Button>
+                        <Button variant='outlined'>
+                            Settings
+                        </Button> 
                     </Stack>
                 </Box>
             </Fade>
