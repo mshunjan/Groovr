@@ -1,14 +1,8 @@
 import * as React from 'react';
 
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import AppleIcon from '@mui/icons-material/Apple';
 import Paper from '@mui/material/Paper';
 import Slide from '@mui/material/Slide';
 import { purple } from '@mui/material/colors';
@@ -20,23 +14,25 @@ import Grid from '@mui/material/Unstable_Grid2';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
 
-import SimpleBottomNavigation from "../components/SimpleBottomNavigation";
-
 import profile1 from '../images/profile1.jpg';
 
 export default function Explore() {
 
     const [checked, setChecked] = React.useState(false);
-    const containerRef = React.useRef(null);
+    const [showBio, setShowbio] = React.useState(false);
 
     React.useEffect(() => {
         setChecked(true);
     }, []);
 
+    function handleBio() {
+        setShowbio(!showBio);
+    }
+
     return (
         <>
             <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
-                <Container
+                <Container component="main" maxWidth="xs"
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -45,6 +41,9 @@ export default function Explore() {
                         height: '100vh',
                         backgroundSize: 'contain',
                         backgroundRepeat: 'no-repeat',
+                        bottom: 0,
+                        left: 0,
+                        position: 'absolute',
                         overflow: 'hidden'
 
                     }}>
@@ -89,9 +88,9 @@ export default function Explore() {
                                 About
                             </Typography>
                             <Typography variant="body2" sx={{ marginRight: '25%' }}>
-                                If you ever need a bubble tea recommendation, I'm your girl, I like...
+                                If you ever need a bubble tea recommendation, I'm your man. I like{showBio ? " going to raves and am seeking a rave partner! Plus I have a dog.":"..."}
                             </Typography>
-                            <Typography sx={{ fontSize: 13, fontWeight: 'bold', color: purple[500], mb: 3 }}>
+                            <Typography sx={{ fontSize: 13, fontWeight: 'bold', color: purple[500], mb: 3, cursor: 'pointer' }} onClick={handleBio}>
                                 Read more
                             </Typography>
 
