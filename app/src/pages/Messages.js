@@ -1,5 +1,6 @@
-import { Typography, Box, Card, Stack, CardActionArea, Avatar } from '@mui/material';
+import { Typography, Box, Card, Stack, CardActionArea, Avatar, Slide, Fade } from '@mui/material';
 import Container from '@mui/material/Container';
+import { useEffect, useRef, useState } from 'react';
 
 import profile1 from '../images/sample_message_profiles/profile1.jpg';
 import profile2 from '../images/sample_message_profiles/profile2.jpg';
@@ -16,6 +17,13 @@ const Messages = () => {
         transitionDuration: "0.3s",
         padding: 20
     };
+    const [checked, setChecked] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        setChecked(true);
+    }, []);
+
 
     const data = [{
         image: profile1,
@@ -45,8 +53,8 @@ const Messages = () => {
         image: profile7,
         message: "Alice in Chains for sure"
     },
-    
-]
+
+    ]
 
     return (
         <Container component="main" maxWidth="xs">
@@ -55,17 +63,19 @@ const Messages = () => {
             </Typography>
             <Stack direction="column" spacing={2.5} >
                 {data.map(point =>
-                    <CardActionArea>
-                        <Card style={cardStyle}>
-                            <Stack direction="row" spacing={2} justifyContent={"left"} alignItems={'center'}>
-                                <Avatar src={point.image}/>
-                                <Typography >
-                                    {point.message}
-                                </Typography>
-                            </Stack>
-                        </Card>
+                    <Fade timeout={500} in={checked} mountOnEnter unmountOnExit>
+                        <CardActionArea>
+                            <Card style={cardStyle}>
+                                <Stack direction="row" spacing={2} justifyContent={"left"} alignItems={'center'}>
+                                    <Avatar src={point.image} />
+                                    <Typography >
+                                        {point.message}
+                                    </Typography>
+                                </Stack>
+                            </Card>
 
-                    </CardActionArea>
+                        </CardActionArea>
+                    </Fade>
                 )}
             </Stack>
         </Container>

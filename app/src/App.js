@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import Explore from './pages/Explore';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { CssBaseline } from '@mui/material';
 import { purple } from '@mui/material/colors';
 import {
   BrowserRouter as Router,
@@ -17,6 +18,10 @@ const theme = createTheme({
     primary: {
       main: purple[500],
     },
+    background: {
+      paper: purple[50],
+      default: purple[100]
+    }
   }
 });
 
@@ -34,6 +39,8 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+      <CssBaseline />
+
         <Router>
           <Routes>
             <Route path="/" element={<SignUp />} />

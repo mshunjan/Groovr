@@ -4,15 +4,19 @@ import NavigationComponent from "../components/NavigationComponent";
 
 import Messages from "./Messages";
 import Explore from "./Explore";
+import Profile from "./Profile";
+
 import ExploreIcon from '@mui/icons-material/Explore';
 import ForumIcon from '@mui/icons-material/Forum';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import masterprofile from '../images/masterprofile.jpg';
+import { Avatar } from "@mui/material";
 
 const Home = () => {
     const [click, setClick] = useState({
-        explore: true,
+        explore: false,
         messages: false,
-        profile: false
+        profile: true
     })
 
     const handleClick = (obj) => {
@@ -34,8 +38,8 @@ const Home = () => {
         onclick: handleClick
     },
     {
-        label: "Profile",
-        icon: <AccountCircleIcon />,
+        label: "Profile", 
+        icon: <Avatar src={masterprofile} sx={{ width: 24, height: 24 }}/>,
         onclick: handleClick
     },
     ]
@@ -54,10 +58,10 @@ const Home = () => {
                     <Messages />
                     :
                     null}
-                {/* {click.profile ?
+                {click.profile ?
                     <Profile />
                     :
-                    null} */}
+                    null}
                 <NavigationComponent navs={navs} />
             </Container>
         </>
